@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闫丽楠 · 新媒体运营作品集</title>
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --gray: #6e6e73;
+    --gray-light: #a1a1a6;
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --blue: #0071e3;
+    --blue-deep: #0062c4;
+    --radius: 22px;
+    --shadow: 0 2px 16px rgba(0,0,0,.05);
+    --shadow-hover: 0 10px 34px rgba(0,0,0,.10);
+    --border: rgba(0,0,0,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "PingFang SC", "SF Pro SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  img { display: block; }
+  ::selection { background: rgba(0,113,227,.15); }
+
+  /* ===== 导航 ===== */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(245,245,247,.8); backdrop-filter: blur(20px) saturate(1.5); -webkit-backdrop-filter: blur(20px) saturate(1.5); box-shadow: 0 1px 0 var(--border); }
+  .nav-inner { max-width: 1080px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-weight: 700; font-size: 16.5px; color: var(--ink); letter-spacing: .5px; }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  @media (max-width: 640px) { .nav-links { gap: 12px; } .nav-links a { font-size: 11.5px; } .nav-logo { font-size: 14.5px; white-space: nowrap; } .nav-inner { padding: 12px 16px; } }
+
+  /* ===== Hero ===== */
+  .hero { position: relative; overflow: hidden; background: var(--bg); color: var(--ink); padding-top: 120px; }
+  .hero::before { content: ""; position: absolute; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, rgba(0,113,227,.10), transparent 62%); top: -220px; left: 50%; transform: translateX(-90%); pointer-events: none; }
+  .hero::after { content: ""; position: absolute; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(191,90,242,.10), transparent 62%); top: -160px; right: -140px; pointer-events: none; }
+  .hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; padding: 0 24px 10px; text-align: center; }
+  .hero-avatar { width: 148px; height: 148px; border-radius: 50%; object-fit: cover; object-position: center 32%; margin: 0 auto 30px; box-shadow: 0 4px 24px rgba(0,0,0,.14); }
+  .hero-role { display: inline-block; margin-bottom: 16px; padding: 6px 18px; border-radius: 999px; background: rgba(0,113,227,.08); color: var(--blue); font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+  .hero-text h1 { font-size: 46px; font-weight: 800; letter-spacing: 1px; line-height: 1.25; margin-bottom: 18px; }
+  .grad-text { background: linear-gradient(100deg, #0071e3 5%, #7d4fe0 45%, #e0568c 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero-text p { color: var(--gray); max-width: 620px; margin: 0 auto; font-size: 16px; line-height: 1.85; }
+  .hero-btns { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 13px 34px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all .25s; }
+  .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 4px 16px rgba(0,113,227,.28); }
+  .btn-blue:hover { background: var(--blue-deep); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,113,227,.38); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid rgba(0,0,0,.18); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* ===== 数据亮点 ===== */
+  .stats { max-width: 1080px; margin: 56px auto 0; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat-card { background: var(--card); border-radius: var(--radius); padding: 28px 14px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform .25s, box-shadow .25s; }
+  .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .stat-num { font-size: 36px; font-weight: 800; letter-spacing: -.5px; background: linear-gradient(115deg, #0071e3, #7d4fe0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat-num small { font-size: 16px; font-weight: 700; color: var(--gray); }
+  .stat-label { color: var(--gray); font-size: 13px; margin-top: 6px; line-height: 1.5; }
+
+  /* ===== 通用 ===== */
+  section { max-width: 1080px; margin: 0 auto; padding: 84px 24px 0; }
+  .sec-title { margin-bottom: 36px; text-align: center; position: relative; }
+  .sec-title h2 { font-size: 32px; font-weight: 800; letter-spacing: 1px; }
+  .sec-title .en { background: linear-gradient(100deg, #0071e3, #7d4fe0); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-top: 8px; }
+  .sec-title::after { content: ""; display: block; width: 44px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #0071e3, #7d4fe0, #e0568c); margin: 14px auto 0; }
+  .sec-title .sec-note { margin-top: 10px; color: var(--gray); font-size: 13px; }
+  .card { background: var(--card); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+
+  /* ===== 关于我 ===== */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+  .about-card p { color: var(--gray); margin-bottom: 12px; font-size: 15px; }
+  .about-card strong { color: var(--ink); }
+  .skill-group { margin-top: 18px; }
+  .skill-group:first-child { margin-top: 0; }
+  .skill-group h4 { font-size: 14.5px; margin-bottom: 10px; color: var(--ink); font-weight: 700; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { padding: 7px 16px; background: var(--bg); color: var(--ink); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; font-weight: 500; transition: all .2s; }
+  .tag:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  /* ===== 作品画廊 ===== */
+  .gallery-filter { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px; }
+  .filter-btn { padding: 9px 22px; border-radius: 999px; border: 1px solid rgba(0,0,0,.12); background: #fff; color: var(--gray); font-size: 13.5px; font-weight: 600; cursor: pointer; transition: all .22s; }
+  .filter-btn:hover { color: var(--ink); border-color: rgba(0,0,0,.3); }
+  .filter-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .masonry { columns: 3; column-gap: 16px; }
+  @media (max-width: 900px) { .masonry { columns: 2; } }
+  @media (max-width: 560px) { .masonry { columns: 1; } }
+  .g-item { break-inside: avoid; margin-bottom: 16px; position: relative; border-radius: 18px; overflow: hidden; cursor: zoom-in; box-shadow: var(--shadow); border: 1px solid var(--border); background: #fff; }
+  .g-item img { width: 100%; transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+  .g-item:hover img { transform: scale(1.04); }
+  .g-item .g-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 42px 18px 15px; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.62)); opacity: 0; transition: opacity .35s; }
+  .g-item:hover .g-overlay { opacity: 1; }
+  .g-overlay .g-cat { align-self: flex-start; font-size: 11px; font-weight: 700; color: var(--ink); background: rgba(255,255,255,.92); padding: 3px 12px; border-radius: 999px; margin-bottom: 7px; letter-spacing: 1px; }
+  .g-overlay h3 { color: #fff; font-size: 15px; font-weight: 700; line-height: 1.45; }
+  .g-overlay span.expand { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.3); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; font-size: 15px; color: #fff; }
+  .g-item.hide { display: none; }
+
+  /* ===== 视频作品 ===== */
+  .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 860px) { .video-grid { grid-template-columns: 1fr; } }
+  .v-card { position: relative; border-radius: 18px; overflow: hidden; cursor: pointer; box-shadow: var(--shadow); border: 1px solid var(--border); background: #000; aspect-ratio: 16/9; }
+  .v-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+  .v-card:hover img { transform: scale(1.04); }
+  .v-card .v-dim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 40%, rgba(0,0,0,.72)); }
+  .v-card .v-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -62%); width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.28); backdrop-filter: blur(10px); border: 1.5px solid rgba(255,255,255,.8); display: flex; align-items: center; justify-content: center; transition: all .3s; }
+  .v-card:hover .v-play { transform: translate(-50%, -62%) scale(1.1); background: rgba(255,255,255,.42); }
+  .v-card .v-play::after { content: ""; border-left: 20px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
+  .v-card .v-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 15px 18px 13px; }
+  .v-card .v-tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--ink); background: rgba(255,255,255,.92); padding: 3px 12px; border-radius: 999px; margin-bottom: 6px; letter-spacing: 1px; }
+  .v-card h3 { color: #fff; font-size: 15px; font-weight: 700; line-height: 1.45; }
+  .v-card .v-dur { position: absolute; top: 12px; right: 14px; font-size: 11.5px; font-weight: 700; color: #fff; background: rgba(0,0,0,.55); backdrop-filter: blur(6px); padding: 3px 10px; border-radius: 999px; }
+  #lb-video { display: none; max-width: 100%; max-height: 100%; border-radius: 16px; background: #000; box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+
+  /* ===== 微信推文卡 ===== */
+  .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+  @media (max-width: 860px) { .posts-grid { grid-template-columns: 1fr; } }
+  .post-card { background: var(--card); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+  .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .post-card .p-badge { font-size: 11.5px; font-weight: 700; color: var(--blue); background: rgba(0,113,227,.08); padding: 4px 13px; border-radius: 999px; align-self: flex-start; margin-bottom: 14px; }
+  .post-card h3 { font-size: 15.5px; line-height: 1.55; margin-bottom: 10px; flex: 1; color: var(--ink); }
+  .post-card .p-meta { font-size: 12.5px; color: var(--gray); margin-bottom: 16px; line-height: 1.6; }
+  .post-card .p-meta b { color: var(--ink); }
+  .post-card a.p-link { text-decoration: none; text-align: center; font-size: 13.5px; font-weight: 600; color: var(--blue); background: rgba(0,113,227,.08); padding: 11px 0; border-radius: 12px; transition: all .25s; }
+  .post-card a.p-link:hover { background: var(--blue); color: #fff; }
+
+  /* ===== 成果亮点 ===== */
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .result-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 34px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+  .result-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .result-card .r-icon { font-size: 30px; margin-bottom: 12px; }
+  .result-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .result-card p { font-size: 14.5px; color: var(--gray); }
+  .result-card .r-nums { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .result-card .r-nums span { font-size: 12.5px; font-weight: 700; color: var(--blue); background: rgba(0,113,227,.08); padding: 5px 14px; border-radius: 999px; }
+
+  /* ===== 时间线 ===== */
+  .timeline { position: relative; padding-left: 32px; max-width: 860px; margin: 0 auto; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, #0071e3, #7d4fe0, rgba(224,86,140,.5)); }
+  .tl-item { position: relative; margin-bottom: 26px; }
+  .tl-item::before { content: ""; position: absolute; left: -31px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid var(--blue); }
+  .tl-card { background: var(--card); border-radius: var(--radius); padding: 30px 34px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .tl-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+  .tl-company { font-size: 19px; font-weight: 800; }
+  .tl-date { color: var(--gray); font-weight: 600; font-size: 13px; background: var(--bg); border: 1px solid var(--border); padding: 4px 14px; border-radius: 999px; }
+  .tl-role { color: var(--gray); font-size: 14px; margin: 5px 0 14px; }
+  .tl-role b { color: var(--ink); }
+  .tl-card ul { list-style: none; }
+  .tl-card li { margin-bottom: 10px; padding-left: 18px; position: relative; color: var(--gray); font-size: 14.5px; }
+  .tl-card li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+  .tl-card li b { color: var(--ink); }
+  .hl { color: var(--blue); font-weight: 700; }
+
+  /* ===== 教育 ===== */
+  .edu-card { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+  .edu-card h3 { font-size: 19px; font-weight: 800; }
+  .edu-card .tl-date { margin-left: auto; }
+  .edu-major { color: var(--gray); font-size: 15px; margin-bottom: 12px; }
+  .edu-major b { color: var(--ink); }
+  .edu-courses { color: var(--gray); font-size: 14px; }
+  .edu-courses b { color: var(--blue); }
+
+  /* ===== 联系 ===== */
+  .contact-banner { position: relative; overflow: hidden; background: linear-gradient(135deg, #eef4ff 0%, #f7f2ff 45%, #fff1f5 100%); border: 1px solid rgba(0,113,227,.12); border-radius: 26px; text-align: center; padding: 64px 30px; margin-top: 84px; box-shadow: var(--shadow); }
+  .contact-banner::before { content: ""; position: absolute; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(0,113,227,.10), transparent 62%); top: -160px; right: -100px; }
+  .contact-banner h2 { font-size: 28px; margin-bottom: 10px; position: relative; }
+  .contact-banner p { color: var(--gray); margin-bottom: 28px; position: relative; }
+  .contact-items { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; }
+  .contact-chip { background: #fff; border: 1px solid rgba(0,113,227,.18); padding: 12px 26px; border-radius: 999px; font-weight: 600; font-size: 14.5px; color: var(--ink); box-shadow: 0 2px 10px rgba(0,113,227,.08); }
+
+  footer { text-align: center; color: var(--gray-light); font-size: 13px; padding: 48px 20px 36px; }
+
+  /* ===== Lightbox ===== */
+  .lightbox { position: fixed; inset: 0; z-index: 500; background: rgba(28,28,30,.92); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; padding: 34px; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+  .lightbox .lb-close { position: absolute; top: 22px; right: 30px; font-size: 32px; color: #fff; cursor: pointer; line-height: 1; opacity: .75; }
+  .lightbox .lb-close:hover { opacity: 1; }
+
+  /* ===== 动画 ===== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  @media (max-width: 860px) {
+    .hero { padding-top: 96px; }
+    .hero-text h1 { font-size: 34px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .about-grid, .results-grid { grid-template-columns: 1fr; }
+    .posts-grid { grid-template-columns: 1fr; }
+    section { padding: 64px 20px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">闫丽楠 · 作品集</div>
+    <div class="nav-links">
+      <a href="#about">关于我</a>
+      <a href="#works">作品画廊</a>
+      <a href="#results">项目成果</a>
+      <a href="#experience">经历</a>
+      <a href="#contact">联系我</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-avatar" src="avatar.jpg" alt="闫丽楠">
+    <div class="hero-role">新媒体运营 · 内容创作 · AI 视觉创意</div>
+    <h1><span class="grad-text">你好，我是闫丽楠</span></h1>
+    <p>2 年新媒体全流程运营经验，深耕<strong>自动驾驶 / AI</strong> 与<strong>汽车</strong>行业。擅长多平台矩阵运营、短视频策划、直播体系搭建与 AI 辅助视觉创作——从文案到海报，从账号到直播间，独立完成品牌内容的全链路生产。</p>
+    <div class="hero-btns">
+      <a class="btn btn-blue" href="#works">查看作品</a>
+      <a class="btn btn-ghost" href="#contact">联系我</a>
+    </div>
+  </div>
+</div>
+
+<!-- 数据亮点 -->
+<div class="stats">
+  <div class="stat-card reveal"><div class="stat-num">12<small>+</small></div><div class="stat-label">海内外全平台官方账号运营</div></div>
+  <div class="stat-card reveal"><div class="stat-num">TOP<small>5</small></div><div class="stat-label">厂家新媒体打榜连续多月入围</div></div>
+  <div class="stat-card reveal"><div class="stat-num">10w<small>+</small></div><div class="stat-label">为团队争取广告投放奖励资源</div></div>
+  <div class="stat-card reveal"><div class="stat-num">30<small>+</small></div><div class="stat-label">品牌海报与创意内容作品</div></div>
+</div>
+
+<!-- 关于我 -->
+<section id="about">
+  <div class="sec-title reveal"><h2>关于我</h2><div class="en">About Me</div></div>
+  <div class="about-grid">
+    <div class="card about-card reveal">
+      <p><strong>我是谁：</strong>南京传媒学院英语（国际新闻）本科，兼具<strong>新闻专业功底</strong>与<strong>国际化视野</strong>，从选题、文案、图片到分发，具备品牌新媒体内容的完整生产方法论。</p>
+      <p><strong>我能做什么：</strong>从 0 到 1 搭建品牌新媒体矩阵；独立完成短视频策划与脚本撰写、节气/节日品牌海报、产品传播长图与海外发布会传播物料；主导直播 SOP 建设与线索转化全链路管理。</p>
+      <p><strong>我的特质：</strong>快速学习能力强，能迅速适应新的工作内容与流程；擅长跨部门沟通协作，用内容为业务目标服务。</p>
+      <div class="skill-group">
+        <h4>🛠 新媒体工具</h4>
+        <div class="tags"><span class="tag">剪映</span><span class="tag">Photoshop</span><span class="tag">可画</span><span class="tag">秀米</span><span class="tag">即梦 AI</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>💼 办公自动化</h4>
+        <div class="tags"><span class="tag">Word</span><span class="tag">PowerPoint</span><span class="tag">Trea Work</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>🌐 语言能力</h4>
+        <div class="tags"><span class="tag">CET-4</span><span class="tag">雅思 6.0</span><span class="tag">普通话一乙</span></div>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="skill-group">
+        <h4>📱 平台运营经验</h4>
+        <div class="tags"><span class="tag">微信公众号</span><span class="tag">视频号</span><span class="tag">抖音</span><span class="tag">小红书</span><span class="tag">微博</span><span class="tag">B 站</span><span class="tag">百家号</span><span class="tag">今日头条</span><span class="tag">懂车帝</span><span class="tag">TikTok</span><span class="tag">YouTube</span><span class="tag">领英</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>🎯 核心能力关键词</h4>
+        <div class="tags"><span class="tag">矩阵运营</span><span class="tag">短视频策划</span><span class="tag">直播 SOP</span><span class="tag">线索转化</span><span class="tag">AI 内容创作</span><span class="tag">品牌海报设计</span><span class="tag">整合营销</span><span class="tag">跨部门协作</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>📚 主修课程</h4>
+        <div class="tags"><span class="tag">新闻采访与写作</span><span class="tag">新闻摄编实务</span><span class="tag">出镜记者报道</span><span class="tag">英语新闻视读</span><span class="tag">新闻编译</span><span class="tag">媒介素养</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 作品画廊 -->
+<section id="works">
+  <div class="sec-title reveal"><h2>作品画廊</h2><div class="en">Selected Works</div><div class="sec-note">点击任意作品可查看大图</div></div>
+  <div class="gallery-filter reveal">
+    <button class="filter-btn active" data-f="all">全部作品</button>
+    <button class="filter-btn" data-f="brand">海外发布传播</button>
+    <button class="filter-btn" data-f="creative">节气节日创意</button>
+    <button class="filter-btn" data-f="honor">品牌荣誉内容</button>
+    <button class="filter-btn" data-f="travel">旅行内容创作</button>
+  </div>
+  <div class="masonry reveal" id="masonry">
+    <div class="g-item" data-cat="brand"><img loading="lazy" src="works/sumw.jpg" alt="MOGOX SUMW 2026 发布预告海报"><div class="g-overlay"><span class="g-cat">海外发布传播</span><h3>SUMW 2026 新加坡 · 重磅产品发布预告海报</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="creative"><img loading="lazy" src="works/lidong.jpg" alt="立冬节气海报"><div class="g-overlay"><span class="g-cat">节气节日创意</span><h3>立冬节气海报《冬天，请多关照》</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="creative"><img loading="lazy" src="works/women.jpg" alt="妇女节海报 SHE DRIVES"><div class="g-overlay"><span class="g-cat">节气节日创意</span><h3>妇女节海报《HAPPY WOMEN'S DAY · 不被定义，做你自己》</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="creative"><img loading="lazy" src="works/xiaonian.jpg" alt="小年节气海报"><div class="g-overlay"><span class="g-cat">节气节日创意</span><h3>小年海报《小年纳福 · 迎接新春》（剪纸 × 黏土风）</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="brand"><img loading="lazy" src="works/bus.jpg" alt="8.5米级自动驾驶纯电动巴士产品海报"><div class="g-overlay"><span class="g-cat">海外发布传播</span><h3>8.5 米级自动驾驶纯电动巴士 · 产品参数海报</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="creative"><img loading="lazy" src="works/chushu.jpg" alt="处暑节气海报"><div class="g-overlay"><span class="g-cat">节气节日创意</span><h3>处暑节气海报《开门见秋》</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="brand"><img loading="lazy" src="works/computing.jpg" alt="算力与感知技术海报"><div class="g-overlay"><span class="g-cat">海外发布传播</span><h3>「强劲算力驱动 · 多维感知融合」技术解读海报</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="creative"><img loading="lazy" src="works/children.jpg" alt="六一儿童节海报"><div class="g-overlay"><span class="g-cat">节气节日创意</span><h3>六一儿童节海报《小时候幻想的未来，正在驶来》</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="brand"><img loading="lazy" src="works/scenarios.jpg" alt="多场景自主通行海报"><div class="g-overlay"><span class="g-cat">海外发布传播</span><h3>「多场景自主通行 · 智能应对复杂路况」能力海报</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="honor"><img loading="lazy" src="works/awards.jpg" alt="品牌荣誉盘点长图"><div class="g-overlay"><span class="g-cat">品牌荣誉内容</span><h3>品牌年度荣誉盘点长图（奖项合集）</h3><span class="expand">⤢</span></div></div>
+    <div class="g-item" data-cat="travel"><img loading="lazy" src="works/srilanka.jpg" alt="斯里兰卡旅行线路海报"><div class="g-overlay"><span class="g-cat">旅行内容创作</span><h3>《斯里兰卡 · 极具魅力的生态教室》线路种草海报</h3><span class="expand">⤢</span></div></div>
+  </div>
+
+  <!-- 视频作品 -->
+  <div style="margin-top: 72px;">
+    <div class="sec-title reveal"><h2>AI 视频创作</h2><div class="en">AI Video Works</div><div class="sec-note">点击封面即可播放</div></div>
+    <div class="video-grid reveal">
+      <div class="v-card" onclick="openVideo('works/video_wuyi.mp4')">
+        <img loading="lazy" src="works/poster_wuyi.jpg" alt="MOGOBUS 五一快线 AI 宣传片">
+        <div class="v-dim"></div>
+        <span class="v-dur">66″</span>
+        <div class="v-play"></div>
+        <div class="v-info"><span class="v-tag">AI 品牌宣传片</span><h3>《MOGOBUS 五一快线》—— AI 生成的节日出行主题品牌视频</h3></div>
+      </div>
+      <div class="v-card" onclick="openVideo('works/video_cat.mp4')">
+        <img loading="lazy" src="works/poster_cat.jpg" alt="萌宠自动驾驶海外创意短视频">
+        <div class="v-dim"></div>
+        <span class="v-dur">77″</span>
+        <div class="v-play"></div>
+        <div class="v-info"><span class="v-tag">海外创意内容</span><h3>「萌宠 × 自动驾驶」英文创意短视频（Self-driving）</h3></div>
+      </div>
+      <div class="v-card" onclick="openVideo('works/video_autumn.mp4')">
+        <img loading="lazy" src="works/poster_autumn.jpg" alt="秋日主题 AI 创意短视频">
+        <div class="v-dim"></div>
+        <span class="v-dur">39″</span>
+        <div class="v-play"></div>
+        <div class="v-info"><span class="v-tag">节气创意视频</span><h3>秋日国风插画 × 自动驾驶（竖屏短视频）</h3></div>
+      </div>
+      <div class="v-card" onclick="openVideo('works/video_digital.mp4')">
+        <img loading="lazy" src="works/poster_digital.jpg" alt="AI 数字人热点解读视频">
+        <div class="v-dim"></div>
+        <span class="v-dur">71″</span>
+        <div class="v-play"></div>
+        <div class="v-info"><span class="v-tag">第三方矩阵 · AI 数字人</span><h3>「韩国地方政府排队引入无人公交」AI 数字人热点解读</h3></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 微信推文 -->
+  <div class="posts-grid reveal">
+    <div class="post-card">
+      <span class="p-badge">图文推送</span>
+      <h3>《即将出发｜丽江香格里拉秘境徒步——人生必须去一次的地方》</h3>
+      <div class="p-meta">「BM 般马」公众号 · 线路招募推文<br>负责 <b>文案撰写 + 图片处理</b></div>
+      <a class="p-link" href="https://mp.weixin.qq.com/s/igKiNQZZsZG-xlhsadrbng" target="_blank" rel="noopener">阅读原文 ↗</a>
+    </div>
+    <div class="post-card">
+      <span class="p-badge">图文推送</span>
+      <h3>《即将出发｜德国黑森林徒步版，探寻德意志西南部绿野仙踪》</h3>
+      <div class="p-meta">「BM 般马」公众号 · 线路种草推文<br>负责 <b>文案撰写 + 图片处理</b></div>
+      <a class="p-link" href="https://mp.weixin.qq.com/s/zUlyXQlkxJPKV87t6P5fEQ" target="_blank" rel="noopener">阅读原文 ↗</a>
+    </div>
+    <div class="post-card">
+      <span class="p-badge">海报创作</span>
+      <h3>《斯里兰卡 · 极具魅力的生态教室》主题视觉海报</h3>
+      <div class="p-meta">「BM 般马」 · 目的地营销物料<br>负责 <b>文案 + 图片设计合成</b></div>
+      <a class="p-link" href="javascript:void(0)" onclick="openLB('works/srilanka.jpg')">查看海报 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- 项目成果 -->
+<section id="results">
+  <div class="sec-title reveal"><h2>代表性项目成果</h2><div class="en">Key Achievements</div></div>
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <div class="r-icon">🏆</div>
+      <h3>厂家新媒体打榜 · 竞赛运营突破</h3>
+      <p>主导短视频创意策划与脚本撰写，参与厂家新媒体打榜活动，短视频内容连续多月入围 TOP5 榜单，凭排名为团队争取到厂家次月广告投放奖励资源。</p>
+      <div class="r-nums"><span>连续多月 TOP5</span><span>10w+ 资源争取</span></div>
+    </div>
+    <div class="result-card reveal">
+      <div class="r-icon">📹</div>
+      <h3>直播体系搭建 + 线索转化闭环</h3>
+      <p>主导品牌直播 SOP 流程建设并落地直播活动，实现潜在客户线索高效获取；建立「多平台线索收集 → 销售对接 → 订单达成」全链路管理机制。</p>
+      <div class="r-nums"><span>直播 SOP</span><span>线索全链路</span><span>O2O 流量互导</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 工作经历 -->
+<section id="experience">
+  <div class="sec-title reveal"><h2>工作经历</h2><div class="en">Experience</div></div>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-card">
+        <div class="tl-head">
+          <div class="tl-company">蘑菇车联</div>
+          <div class="tl-date">2025.10 - 至今 · 北京</div>
+        </div>
+        <div class="tl-role"><b>新媒体互动营销</b> ｜ 公关部 ｜ 自动驾驶、人工智能</div>
+        <ul>
+          <li><b>官方账号全流程运营：</b>负责海内外全渠道官方账号运营，覆盖公众号、视频号、百家号、头条、微博、小红书、抖音、B 站、懂车帝、TikTok、YouTube、领英等 <span class="hl">12+ 平台</span>；负责内容排版发布、账号日常运维及粉丝精细化互动，高效响应商务合作意向、闭环处理用户反馈。</li>
+          <li><b>AI 辅助内容创作：</b>熟练运用 AI 工具高效完成节气节日海报、产品传播长图、AI 短视频（品牌宣传片 / 海外创意视频 / 节气竖屏视频）等视觉创意内容制作，优化内容产出效率，提升全平台内容视觉质感与传播表现力。</li>
+          <li><b>海外发布会传播：</b>参与新加坡 SUMW 2026 产品发布系列传播物料制作，覆盖发布预告、产品参数、技术解读、能力场景等全系列海报。</li>
+          <li><b>第三方矩阵号运营：</b>负责第三方矩阵账号运营，核心执行行业稿件发布、AI 数字人热点解读视频制作与分发，拓展品牌传播渠道。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-card">
+        <div class="tl-head">
+          <div class="tl-company">利星行（中国）</div>
+          <div class="tl-date">2024.08 - 2025.09 · 北京</div>
+        </div>
+        <div class="tl-role"><b>新媒体运营</b> ｜ 市场营销部 ｜ 汽车</div>
+        <ul>
+          <li><b>新媒体矩阵运营：</b>负责抖音 / 视频号 / 小红书等平台官方账号运营，完成短视频创意策划、脚本撰写及全平台分发，构建品牌数字营销矩阵。</li>
+          <li><b>直播运营体系搭建：</b>主导直播 SOP 流程建设，完成品牌直播活动，实现潜在客户线索高效获取。</li>
+          <li><b>线索转化：</b>建立从多平台线索收集、销售对接转化到订单达成的<span class="hl">全链路管理机制</span>。</li>
+          <li><b>竞赛运营突破：</b>短视频内容<span class="hl">连续多月入围 TOP5 榜单</span>，为团队争取厂家次月广告投放奖励资源 <span class="hl">10w+</span>。</li>
+          <li><b>整合营销创新：</b>策划执行车展 / 外展等线下活动新媒体传播方案，通过「直播 + 短视频 + 朋友圈」组合传播实现线上线下流量互导。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 教育经历 -->
+<section id="education">
+  <div class="sec-title reveal"><h2>教育经历</h2><div class="en">Education</div></div>
+  <div class="card reveal" style="max-width: 860px; margin: 0 auto;">
+    <div class="edu-card">
+      <h3>南京传媒学院</h3>
+      <div class="tl-date">2020.09 - 2024.06</div>
+    </div>
+    <div class="edu-major"><b>英语（国际新闻）</b> ｜ 本科</div>
+    <div class="edu-courses"><b>主修课程：</b>新闻采访与写作、新闻摄编实务、出镜记者报道、英语新闻视读、新闻编译、媒介素养、国际关系与政治、英语视听说等。</div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section id="contact" style="padding-bottom:0">
+  <div class="contact-banner reveal">
+    <h2>期待与你的合作</h2>
+    <p>如果你正在寻找一位懂内容、懂数据、懂 AI 的新媒体运营伙伴，欢迎随时联系我</p>
+    <div class="contact-items">
+      <div class="contact-chip">📞 183-2233-0314</div>
+      <div class="contact-chip">🎓 英语（国际新闻）本科</div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 闫丽楠 · 新媒体运营作品集</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <span class="lb-close" onclick="closeLB(event)">×</span>
+  <img id="lb-img" src="" alt="作品大图">
+  <video id="lb-video" src="" controls playsinline></video>
+</div>
+
+<script>
+  // 入场动画
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 画廊筛选
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.f;
+      document.querySelectorAll('.g-item').forEach(it => {
+        it.classList.toggle('hide', f !== 'all' && it.dataset.cat !== f);
+      });
+    });
+  });
+
+  // Lightbox（图片 + 视频）
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbVideo = document.getElementById('lb-video');
+  function openLB(src) { lbImg.style.display = 'block'; lbVideo.style.display = 'none'; lbVideo.pause(); lbImg.src = src; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function openVideo(src) { lbImg.style.display = 'none'; lbImg.src = ''; lbVideo.style.display = 'block'; lbVideo.src = src; lb.classList.add('open'); document.body.style.overflow = 'hidden'; lbVideo.play(); }
+  function closeLB(e) { if (e && e.target === lbImg || e && e.target === lbVideo) return; lb.classList.remove('open'); lbImg.src = ''; lbVideo.pause(); lbVideo.src = ''; document.body.style.overflow = ''; }
+  document.querySelectorAll('.g-item').forEach(it => {
+    it.addEventListener('click', () => openLB(it.querySelector('img').src));
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+</script>
+</body>
+</html>
